@@ -1,8 +1,15 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Script containing two functions:
+##
+## 1. makeCacheMatrix - Creates list object containing 
+##    set/get methods for a matrix and setInverse/getInverser
+##    methiods for the inverser of the matrix.
+## 2. cacheSolve - Retrieves and returns inverse matrix from list object 
+##    created by makeCacheMatrix. If inverse is not set, cacheSolve
+##    creates the inverse and sets list objects inverse property.
 
-## Write a short comment describing this function
-
+## makeCacheMatrix - creates list object containing 
+##    set/get methods for a matrix and setInverse/getInverser
+##    methiods for the inverse of the matrix.
 makeCacheMatrix <- function(x = matrix()) {
 
     vInverseOfX <- NULL
@@ -25,10 +32,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## cacheSolve - Retrieves and returns inverse matrix from list object 
+##    created by makeCacheMatrix. If inverse is not set, cacheSolve
+##    creates the inverse and sets the list object's inverse property.
 cacheSolve <- function(x, ...) {
-    ## Return a matrix that is the inverse of 'x'
+    
     vInverse <- x$getInverse()
     if(!is.null(vInverse)) {
         message("Returning cached inverse")
